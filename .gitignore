@@ -5,3 +5,4 @@
 /VogCodeChallenge.API/bin/Debug/netcoreapp3.1
 /VogCodeChallenge.API/obj
 /VogCodeChallenge.BLL/obj
+/VogCodeChallenge.BLL/bin/Debug/netstandard2.0

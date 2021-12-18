@@ -107,11 +107,11 @@ namespace VogCodeChallenge.API
             var apiEnvironment = this.GetEnvironment();
             var version = this.BuildSwaggerVersionString(apiEnvironment);
 
-            Boolean dbConnectivity;
-            Boolean.TryParse(this.Configuration.GetSection("MessagingApiBaseURL").Value, out dbConnectivity);
+            Boolean enableDBConnectivity;
+            Boolean.TryParse(this.Configuration.GetSection("EnableDBConnectivity").Value, out enableDBConnectivity);
 
             services.AddSingleton<IVogCodeChallengeConfig>(
-                new VogCodeChallengeConfig(dbConnectivity));
+                new VogCodeChallengeConfig(enableDBConnectivity));
 
             services.AddOptions();
 

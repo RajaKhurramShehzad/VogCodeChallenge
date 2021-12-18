@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VogCodeChallenge.API</name>
+    </assembly>
+    <members>
+        <member name="M:VogCodeChallenge.API.Controllers.EmployeeController.GetAll">
+            <summary>
+            Get all employees
+            </summary>
+            <returns>A <see cref="T:VogCodeChallenge.BLL.Objects.Employee"/> Representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:VogCodeChallenge.API.Controllers.EmployeeController.GetAll(System.Int32)">
+            <summary>
+            Get all employees
+            </summary>
+            <param name="departmentId">departmentId</param>
+            <returns>A <see cref="T:VogCodeChallenge.BLL.Objects.Employee"/> Representing the asynchronous operation.</returns>
+        </member>
+    </members>
+</doc>

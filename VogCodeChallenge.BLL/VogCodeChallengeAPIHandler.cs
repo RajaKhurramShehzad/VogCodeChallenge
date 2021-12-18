@@ -1,16 +1,20 @@
 ﻿using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
+using VogCodeChallenge.BLL.Config;
 using VogCodeChallenge.BLL.Interfaces;
-using VogCodeChallenge.BLL.Objects;
+using VogCodeChallenge.BLL.Models;
+using VogCodeChallenge.BLL.Services;
 
 namespace VogCodeChallenge.BLL
 {
     public class VogCodeChallengeAPIHandler : IVogCodeChallengeAPIHandler
     {
         private readonly ILogger logger;
-        public VogCodeChallengeAPIHandler(ILogger<VogCodeChallengeAPIHandler> logger)
+        private readonly IVogCodeChallengeConfig vogCodeChallengeConfig;
+        public VogCodeChallengeAPIHandler(IVogCodeChallengeConfig vogCodeChallengeConfig, ILogger<VogCodeChallengeAPIHandler> logger)
         {
             this.logger = logger;
+            this.vogCodeChallengeConfig = vogCodeChallengeConfig;
         }
 
         public IEnumerable<Employee> GetAll()
@@ -18,9 +22,11 @@ namespace VogCodeChallenge.BLL
             string methodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
             this.logger.LogInformation($"Begin {methodName}");
 
-            throw new System.NotImplementedException();
+            var employeeDataService = EmployeeServiceFactory.GetEmployeeService(this.vogCodeChallengeConfig.DBConnectivity);
+            var ret = employeeDataService.GetAll();
 
             this.logger.LogInformation($"End {methodName}");
+            return ret;
         }
 
         public IList<Employee> ListAll()
@@ -28,9 +34,11 @@ namespace VogCodeChallenge.BLL
             string methodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
             this.logger.LogInformation($"Begin {methodName}");
 
-            throw new System.NotImplementedException();
+            var employeeDataService = EmployeeServiceFactory.GetEmployeeService(this.vogCodeChallengeConfig.DBConnectivity);
+            var ret = employeeDataService.ListAll();
 
             this.logger.LogInformation($"End {methodName}");
+            return ret;
         }
     }
 }

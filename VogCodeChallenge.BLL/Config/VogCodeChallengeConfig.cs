@@ -6,11 +6,11 @@
         {
         }
 
-        public VogCodeChallengeConfig(bool DBConnectivity)
+        public VogCodeChallengeConfig(bool enableDBConnectivity)
         {
-            this.DBConnectivity = DBConnectivity;
+            this.EnableDBConnectivity = enableDBConnectivity;
         }
 
-        public bool DBConnectivity { get; set; }
+        public bool EnableDBConnectivity { get; set; }
     }
 }

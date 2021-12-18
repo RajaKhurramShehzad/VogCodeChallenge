@@ -2,6 +2,6 @@
 {
     public interface IVogCodeChallengeConfig
     {
-        bool DBConnectivity { get; set; }
+        bool EnableDBConnectivity { get; set; }
     }
 }

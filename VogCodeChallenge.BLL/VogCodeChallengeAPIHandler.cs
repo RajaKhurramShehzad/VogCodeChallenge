@@ -22,7 +22,19 @@ namespace VogCodeChallenge.BLL
             string methodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
             this.logger.LogInformation($"Begin {methodName}");
 
-            var employeeDataService = EmployeeDataServiceFactory.GetEmployeeDataService(this.vogCodeChallengeConfig.DBConnectivity);
+            var employeeDataService = EmployeeDataServiceFactory.GetEmployeeDataService(this.vogCodeChallengeConfig.EnableDBConnectivity);
+            var ret = employeeDataService.GetAll();
+
+            this.logger.LogInformation($"End {methodName}");
+            return ret;
+        }
+
+        public IEnumerable<Employee> GetAll(int departmentId)
+        {
+            string methodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
+            this.logger.LogInformation($"Begin {methodName}");
+
+            var employeeDataService = EmployeeDataServiceFactory.GetEmployeeDataService(this.vogCodeChallengeConfig.EnableDBConnectivity);
             var ret = employeeDataService.GetAll();
 
             this.logger.LogInformation($"End {methodName}");
@@ -34,11 +46,16 @@ namespace VogCodeChallenge.BLL
             string methodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
             this.logger.LogInformation($"Begin {methodName}");
 
-            var employeeDataService = EmployeeDataServiceFactory.GetEmployeeDataService(this.vogCodeChallengeConfig.DBConnectivity);
+            var employeeDataService = EmployeeDataServiceFactory.GetEmployeeDataService(this.vogCodeChallengeConfig.EnableDBConnectivity);
             var ret = employeeDataService.ListAll();
 
             this.logger.LogInformation($"End {methodName}");
             return ret;
+        }
+
+        public IList<Employee> ListAll(int departmentId)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

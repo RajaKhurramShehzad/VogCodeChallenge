@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace VogCodeChallenge.BLL.Models
 {
@@ -10,6 +8,8 @@ namespace VogCodeChallenge.BLL.Models
         {
             this.Employees = new List<Employee>();
         }
+        public string Id { get; set; }
+
         public string Name { get; set; }
 
         public string Address { get; set; }

@@ -8,5 +8,9 @@ namespace VogCodeChallenge.BLL.Interfaces
         IEnumerable<Employee> GetAll();
         IList<Employee> ListAll();
 
+        IEnumerable<Employee> GetAll(int DepartmentId);
+
+        IList<Employee> ListAll(int DepartmentId);
+
     }
 }

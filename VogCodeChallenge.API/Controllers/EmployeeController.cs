@@ -4,6 +4,7 @@ using Swashbuckle.AspNetCore.Annotations;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using VogCodeChallenge.BLL.Interfaces;
+using VogCodeChallenge.BLL.Models;
 using VogCodeChallenge.BLL.Objects;
 
 namespace VogCodeChallenge.API.Controllers
@@ -63,7 +64,7 @@ namespace VogCodeChallenge.API.Controllers
 
             this.logger.LogDebug($"{type}.{methodName} - Parms - departmentId = {departmentId}");
 
-            var ret = this.vogCodeChallengeAPIHandler.GetAll();
+            var ret = this.vogCodeChallengeAPIHandler.ListAll();
 
             this.logger.LogInformation($"End {type}.{methodName}");
             return this.Ok(ret);

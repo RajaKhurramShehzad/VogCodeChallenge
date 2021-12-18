@@ -2,9 +2,9 @@
 
 namespace VogCodeChallenge.BLL.Services
 {
-    public static class EmployeeServiceFactory
+    public static class EmployeeDataServiceFactory
     {
-        public static IEmployeeService GetEmployeeService(bool DBConnectivity)
+        public static IEmployeeService GetEmployeeDataService(bool DBConnectivity)
         {
             IEmployeeService ret;
             if (DBConnectivity)

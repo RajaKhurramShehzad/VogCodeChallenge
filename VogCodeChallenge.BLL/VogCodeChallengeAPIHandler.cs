@@ -22,7 +22,7 @@ namespace VogCodeChallenge.BLL
             string methodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
             this.logger.LogInformation($"Begin {methodName}");
 
-            var employeeDataService = EmployeeServiceFactory.GetEmployeeService(this.vogCodeChallengeConfig.DBConnectivity);
+            var employeeDataService = EmployeeDataServiceFactory.GetEmployeeDataService(this.vogCodeChallengeConfig.DBConnectivity);
             var ret = employeeDataService.GetAll();
 
             this.logger.LogInformation($"End {methodName}");
@@ -34,7 +34,7 @@ namespace VogCodeChallenge.BLL
             string methodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
             this.logger.LogInformation($"Begin {methodName}");
 
-            var employeeDataService = EmployeeServiceFactory.GetEmployeeService(this.vogCodeChallengeConfig.DBConnectivity);
+            var employeeDataService = EmployeeDataServiceFactory.GetEmployeeDataService(this.vogCodeChallengeConfig.DBConnectivity);
             var ret = employeeDataService.ListAll();
 
             this.logger.LogInformation($"End {methodName}");

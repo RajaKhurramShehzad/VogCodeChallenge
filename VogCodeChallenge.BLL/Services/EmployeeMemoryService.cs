@@ -40,7 +40,7 @@ namespace VogCodeChallenge.BLL.Services
         }
         private Employee[] GenerateData()
         {
-            Employee[] Employees = new Employee[]
+            Employee[] employees = new Employee[]
           {
 
                     new Employee {FirstName="James Wadje", LastName="Butt", JobTitle = "technician" , Address = "6649 N Blue Gum St,New Orleans, LA, 70116",  DepartmentId = 1},
@@ -48,7 +48,7 @@ namespace VogCodeChallenge.BLL.Services
                     new Employee {FirstName="Gilma", LastName="Liukko", JobTitle = "Engineer " , Address = "6 Ridgewood Center Dr, PA, 18518",  DepartmentId = 3},
                     new Employee {FirstName="Lili", LastName="Paskin", JobTitle = "supervisor " , Address = "38773 Gravois Ave, FL, 32750",  DepartmentId = 2}
           };
-            return Employees;
+            return employees;
         }
     }
 }

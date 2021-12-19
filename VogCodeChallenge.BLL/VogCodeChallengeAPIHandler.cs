@@ -11,10 +11,12 @@ namespace VogCodeChallenge.BLL
     {
         private readonly ILogger logger;
         private readonly IVogCodeChallengeConfig vogCodeChallengeConfig;
-        public VogCodeChallengeAPIHandler(IVogCodeChallengeConfig vogCodeChallengeConfig, ILogger<VogCodeChallengeAPIHandler> logger)
+        private readonly IEmployeeDataServiceFactory employeeDataServiceFactory;
+        public VogCodeChallengeAPIHandler(IEmployeeDataServiceFactory employeeDataServiceFactory, IVogCodeChallengeConfig vogCodeChallengeConfig, ILogger<VogCodeChallengeAPIHandler> logger)
         {
-            this.logger = logger;
+            this.employeeDataServiceFactory = employeeDataServiceFactory;
             this.vogCodeChallengeConfig = vogCodeChallengeConfig;
+            this.logger = logger;
         }
 
         public IEnumerable<Employee> GetAll()
@@ -22,7 +24,7 @@ namespace VogCodeChallenge.BLL
             string methodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
             this.logger.LogInformation($"Begin {methodName}");
 
-            var employeeDataService = EmployeeDataServiceFactory.GetEmployeeDataService(this.vogCodeChallengeConfig.EnableDBConnectivity);
+            var employeeDataService = this.employeeDataServiceFactory.GetEmployeeDataService(this.vogCodeChallengeConfig.EnableDBConnectivity);
             var ret = employeeDataService.GetAll();
 
             this.logger.LogInformation($"End {methodName}");
@@ -34,7 +36,7 @@ namespace VogCodeChallenge.BLL
             string methodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
             this.logger.LogInformation($"Begin {methodName}");
 
-            var employeeDataService = EmployeeDataServiceFactory.GetEmployeeDataService(this.vogCodeChallengeConfig.EnableDBConnectivity);
+            var employeeDataService = this.employeeDataServiceFactory.GetEmployeeDataService(this.vogCodeChallengeConfig.EnableDBConnectivity);
             var ret = employeeDataService.GetAll();
 
             this.logger.LogInformation($"End {methodName}");
@@ -46,7 +48,7 @@ namespace VogCodeChallenge.BLL
             string methodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
             this.logger.LogInformation($"Begin {methodName}");
 
-            var employeeDataService = EmployeeDataServiceFactory.GetEmployeeDataService(this.vogCodeChallengeConfig.EnableDBConnectivity);
+            var employeeDataService = this.employeeDataServiceFactory.GetEmployeeDataService(this.vogCodeChallengeConfig.EnableDBConnectivity);
             var ret = employeeDataService.ListAll();
 
             this.logger.LogInformation($"End {methodName}");

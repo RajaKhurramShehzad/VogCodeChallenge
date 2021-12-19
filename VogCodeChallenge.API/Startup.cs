@@ -17,6 +17,7 @@ using VogCodeChallenge.API.SwaggerAttributes;
 using VogCodeChallenge.BLL;
 using VogCodeChallenge.BLL.Config;
 using VogCodeChallenge.BLL.Interfaces;
+using VogCodeChallenge.BLL.Services;
 
 namespace VogCodeChallenge.API
 {
@@ -117,6 +118,7 @@ namespace VogCodeChallenge.API
 
             services.AddHttpContextAccessor();
 
+            services.AddTransient<IEmployeeDataServiceFactory, EmployeeDataServiceFactory>();
             services.AddTransient<IVogCodeChallengeAPIHandler, VogCodeChallengeAPIHandler>();
             services.AddHttpClient();
             services.AddSwaggerGen(c =>

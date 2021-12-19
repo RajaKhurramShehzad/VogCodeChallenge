@@ -6,3 +6,8 @@
 /VogCodeChallenge.API/obj
 /VogCodeChallenge.BLL/obj
 /VogCodeChallenge.BLL/bin/Debug/netstandard2.0
+/VogCodeChallenge.Tests/bin/Debug/netcoreapp3.1
+/VogCodeChallenge.Tests/obj
+/VogCodeChallengeTask7/bin/Debug/netcoreapp3.1
+/VogCodeChallengeTask7/obj
+/.vs

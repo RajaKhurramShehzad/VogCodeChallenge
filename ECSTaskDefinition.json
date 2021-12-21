@@ -33,8 +33,20 @@
           "value": "#{DeployEnvironment}#"
         },
         {
+          "name": "FunctionName",
+          "value": "#{FunctionName}#"
+        },
+        {
           "name": "EnableDBConnectivity",
           "value": "#{EnableDBConnectivity}#"
+        },
+        {
+          "name": "AWSKey",
+          "value": "#{AWSKey}#"
+        },
+        {
+          "name": "AWSSecret",
+          "value": "#{AWSSecret}#"
         }
 
       ],

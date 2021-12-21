@@ -13,6 +13,9 @@ services:
       - DeployVersion=0.0.0
       - DeployEnvironment=DEV
       - EnableDBConnectivity=false
+      - FunctionName=mockFuncrion
+      - AWSKey=mockKey
+      - AWSSecret=mockSecret
     ports:
       - "5000"
 

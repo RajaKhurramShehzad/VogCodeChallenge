@@ -37,6 +37,9 @@ ENV ASPNETCORE_URLS=http://+:5000
 ENV DeployVersion=0.0.0
 ENV DeployEnvironment=DEV
 ENV EnableDBConnectivity=false
+ENV FunctionName=mockFuncrion
+ENV AWSKey=mockKey
+ENV AWSSecret=mockSecret
 
 WORKDIR /app
 COPY --from=publish /app/publish .

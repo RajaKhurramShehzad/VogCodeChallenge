@@ -16,6 +16,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\VogCodeChallenge.BLL\VogCodeChallenge.BLL.csproj" />
+    <ProjectReference Include="..\VogCodeChallengeTask7\VogCodeChallengeTask7.csproj" />
+    <ProjectReference Include="..\VogCodeChallengeTask8\VogCodeChallengeTask8.csproj" />
   </ItemGroup>
 
 </Project>

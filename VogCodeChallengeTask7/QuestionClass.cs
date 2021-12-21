@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace VogCodeChallengeTask7
 {
-    public static class QuestionClass
+    public class QuestionClass
     {
         public static List<string> NamesList = new List<string>()
         {
@@ -11,16 +10,18 @@ namespace VogCodeChallengeTask7
             "Jeffrey",
             "John",
         };
-        public static void IterateList()
+        public List<string> IterateList()
         {
+            var ret = new List<string>();
             using (var enumerator = NamesList.GetEnumerator())
             {
                 while (enumerator.MoveNext())
                 {
                     var element = enumerator.Current;
-                    Console.WriteLine(element);
+                    ret.Add(element);
                 }
             }
+            return ret;
         }
     }
 

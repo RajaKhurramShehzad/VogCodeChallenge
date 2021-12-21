@@ -1,7 +1,6 @@
 using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using System;
 using VogCodeChallenge.BLL;
 using VogCodeChallenge.BLL.Config;
 using VogCodeChallenge.BLL.Interfaces;

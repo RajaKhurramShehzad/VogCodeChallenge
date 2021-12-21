@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VogCodeChallenge.Tests", "V
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VogCodeChallengeTask7", "VogCodeChallengeTask7\VogCodeChallengeTask7.csproj", "{3C8B7459-7D17-4E59-95BE-0C45C2BA327B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VogCodeChallengeTask8", "VogCodeChallengeTask8\VogCodeChallengeTask8.csproj", "{A41F38D5-71C4-49CA-990E-C8C1ABBC20DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{3C8B7459-7D17-4E59-95BE-0C45C2BA327B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C8B7459-7D17-4E59-95BE-0C45C2BA327B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C8B7459-7D17-4E59-95BE-0C45C2BA327B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A41F38D5-71C4-49CA-990E-C8C1ABBC20DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A41F38D5-71C4-49CA-990E-C8C1ABBC20DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A41F38D5-71C4-49CA-990E-C8C1ABBC20DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A41F38D5-71C4-49CA-990E-C8C1ABBC20DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

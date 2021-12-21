@@ -25,6 +25,7 @@
   </ItemGroup>
   
   <ItemGroup>
+    <ProjectReference Include="..\AWSLambdaFunction\AWSLambdaFunction.csproj" />
     <ProjectReference Include="..\VogCodeChallenge.BLL\VogCodeChallenge.BLL.csproj" />
   </ItemGroup>
 

@@ -25,11 +25,6 @@ namespace VogCodeChallenge.API.Extensions
                             errorDetails.Message = $"VogCodeChallengeStartupException Message '{contextFeature.Error.Message}'.";
                             errorDetails.StatusCode = HttpStatusCode.NonAuthoritativeInformation;
                         }
-                        else if (contextFeature.Error.GetType() == typeof(VogCodeChallengeStartupException))
-                        {
-                            errorDetails.Message = $"VogCodeChallengeStartupException Message '{contextFeature.Error.Message}'.";
-                            errorDetails.StatusCode = HttpStatusCode.InternalServerError;
-                        }
                         else
                         {
                             errorDetails.Message = $"An error occured. '{contextFeature.Error.Message}'.";

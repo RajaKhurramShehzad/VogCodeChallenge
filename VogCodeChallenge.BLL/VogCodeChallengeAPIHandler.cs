@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using VogCodeChallenge.BLL.Config;
 using VogCodeChallenge.BLL.Interfaces;
 using VogCodeChallenge.BLL.Models;
-using VogCodeChallenge.BLL.Services;
 
 namespace VogCodeChallenge.BLL
 {

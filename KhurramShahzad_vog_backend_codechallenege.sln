@@ -18,6 +18,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{97255F0D-A483-47AB-A395-92A0FC25E5E6}"
 	ProjectSection(SolutionItems) = preProject
 		ECSTaskDefinition.json = ECSTaskDefinition.json
+		README.md = README.md
 	EndProjectSection
 EndProject
 Global

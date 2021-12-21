@@ -13,3 +13,7 @@
 /.vs
 /VogCodeChallengeTask8/bin/Debug/netcoreapp3.1
 /VogCodeChallengeTask8/obj/Debug/netcoreapp3.1
+/AWSLambdaFunction/bin/Debug/netstandard2.0
+/bin/Debug
+/obj
+/AWSLambdaFunction/obj

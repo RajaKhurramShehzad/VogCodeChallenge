@@ -21,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSLambdaFunction", "..\AWSLambdaFunction\AWSLambdaFunction.csproj", "{390FABC8-410D-4129-B3DF-444651F69705}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSLambdaFunction", "AWSLambdaFunction\AWSLambdaFunction.csproj", "{4A938460-1F75-4C8C-B1B8-38F82AC0A1EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,10 +53,10 @@ Global
 		{773B71F2-4F89-4782-813D-DFA210C1CA64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{773B71F2-4F89-4782-813D-DFA210C1CA64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{773B71F2-4F89-4782-813D-DFA210C1CA64}.Release|Any CPU.Build.0 = Release|Any CPU
-		{390FABC8-410D-4129-B3DF-444651F69705}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{390FABC8-410D-4129-B3DF-444651F69705}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{390FABC8-410D-4129-B3DF-444651F69705}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{390FABC8-410D-4129-B3DF-444651F69705}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A938460-1F75-4C8C-B1B8-38F82AC0A1EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A938460-1F75-4C8C-B1B8-38F82AC0A1EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A938460-1F75-4C8C-B1B8-38F82AC0A1EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A938460-1F75-4C8C-B1B8-38F82AC0A1EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

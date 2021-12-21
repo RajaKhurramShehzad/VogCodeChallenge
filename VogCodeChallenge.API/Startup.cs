@@ -1,3 +1,7 @@
+using AWSLambdaFunction;
+using AWSLambdaFunction.Config;
+using AWSLambdaFunction.Interfaces;
+using AWSLambdaFunction.Services;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -111,8 +115,15 @@ namespace VogCodeChallenge.API
             Boolean enableDBConnectivity;
             Boolean.TryParse(this.Configuration.GetSection("EnableDBConnectivity").Value, out enableDBConnectivity);
 
+            var lambdaFunctionName = this.Configuration.GetSection("FunctionName").Value;
+            var awsKey = this.Configuration.GetSection("AWSKey").Value;
+            var awsSecret = this.Configuration.GetSection("AWSSecret").Value;
+
             services.AddSingleton<IVogCodeChallengeConfig>(
                 new VogCodeChallengeConfig(enableDBConnectivity));
+
+            services.AddSingleton<IAWSLambdaFunctionConfig>(
+          new AWSLambdaFunctionConfig(lambdaFunctionName, awsKey, awsSecret));
 
             services.AddOptions();
 
@@ -120,6 +131,8 @@ namespace VogCodeChallenge.API
 
             services.AddTransient<IEmployeeDataServiceFactory, EmployeeDataServiceFactory>();
             services.AddTransient<IVogCodeChallengeAPIHandler, VogCodeChallengeAPIHandler>();
+            services.AddTransient<ILambdaFunctionHandler, LambdaFunctionHandler>();
+            services.AddTransient<ILambdaFunctionService, LambdaFunctionService>();
             services.AddHttpClient();
             services.AddSwaggerGen(c =>
             {

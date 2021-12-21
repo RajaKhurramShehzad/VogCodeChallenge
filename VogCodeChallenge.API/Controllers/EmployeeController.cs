@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AWSLambdaFunction.Interfaces;
+using AWSLambdaFunction.Object;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Swashbuckle.AspNetCore.Annotations;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using VogCodeChallenge.BLL.Interfaces;
 using VogCodeChallenge.BLL.Models;
-using VogCodeChallenge.BLL.Objects;
 
 namespace VogCodeChallenge.API.Controllers
 {
@@ -15,11 +16,13 @@ namespace VogCodeChallenge.API.Controllers
     {
         private readonly ILogger logger;
         private readonly IVogCodeChallengeAPIHandler vogCodeChallengeAPIHandler;
+        private readonly ILambdaFunctionHandler lambdaFunctionHandler;
 
 
-        public EmployeeController(IVogCodeChallengeAPIHandler vogCodeChallengeAPIHandler, ILogger<EmployeeController> logger)
+        public EmployeeController(IVogCodeChallengeAPIHandler vogCodeChallengeAPIHandler, ILambdaFunctionHandler lambdaFunctionHandler,  ILogger<EmployeeController> logger)
         {
             this.vogCodeChallengeAPIHandler = vogCodeChallengeAPIHandler;
+            this.lambdaFunctionHandler = lambdaFunctionHandler;
             this.logger = logger;
         }
 
@@ -100,7 +103,7 @@ namespace VogCodeChallenge.API.Controllers
         [Produces("application/json")]
         [SwaggerResponse(200, "successfully retrieved", typeof(IEnumerable<Employee>))]
         [SwaggerOperation(Tags = new[] { "Employee" })]
-        [Route("employees/department/{departmentId}")]
+        [Route("employees/department/{departmentId}/ListAll")]
         [HttpGet]
         public async Task<IActionResult> ListAll(int departmentId)
         {
@@ -112,6 +115,28 @@ namespace VogCodeChallenge.API.Controllers
             this.logger.LogDebug($"{type}.{methodName} - Parms - departmentId = {departmentId}");
 
             var ret = this.vogCodeChallengeAPIHandler.ListAll(departmentId);
+
+            this.logger.LogInformation($"End {type}.{methodName}");
+            return this.Ok(ret);
+        }
+
+        /// <summary>
+        /// Get aws Lambda function log
+        /// </summary>
+        /// <returns>A <see cref="Employee"/> Representing the asynchronous operation.</returns>
+        [Produces("application/json")]
+        [SwaggerResponse(200, "successfully retrieved", typeof(IEnumerable<Log>))]
+        [SwaggerOperation(Tags = new[] { "AWS" })]
+        [Route("lambdaFunction")]
+        [HttpGet]
+        public async Task<IActionResult> GetLambdaFunctionLog()
+        {
+            var methodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
+            var type = this.GetType().Name;
+
+            this.logger.LogInformation($"Begin {type}.{methodName}");
+
+            var ret = this.lambdaFunctionHandler.RunLambdaFunction();
 
             this.logger.LogInformation($"End {type}.{methodName}");
             return this.Ok(ret);

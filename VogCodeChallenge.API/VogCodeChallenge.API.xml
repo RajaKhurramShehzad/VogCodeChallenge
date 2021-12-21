@@ -4,18 +4,31 @@
         <name>VogCodeChallenge.API</name>
     </assembly>
     <members>
-        <member name="M:VogCodeChallenge.API.Controllers.EmployeeController.GetAll">
+        <member name="M:VogCodeChallenge.API.Controllers.EmployeeController.GetAllEmployees">
             <summary>
             Get all employees
             </summary>
-            <returns>A <see cref="T:VogCodeChallenge.BLL.Objects.Employee"/> Representing the asynchronous operation.</returns>
+            <returns>A <see cref="T:VogCodeChallenge.BLL.Models.Employee"/> Representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:VogCodeChallenge.API.Controllers.EmployeeController.ListAllEmployees">
+            <summary>
+            List all employees
+            </summary>
+            <returns>A <see cref="T:VogCodeChallenge.BLL.Models.Employee"/> Representing the asynchronous operation.</returns>
         </member>
         <member name="M:VogCodeChallenge.API.Controllers.EmployeeController.GetAll(System.Int32)">
             <summary>
-            Get all employees
+            Get specific department employees
             </summary>
             <param name="departmentId">departmentId</param>
-            <returns>A <see cref="T:VogCodeChallenge.BLL.Objects.Employee"/> Representing the asynchronous operation.</returns>
+            <returns>A <see cref="T:VogCodeChallenge.BLL.Models.Employee"/> Representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:VogCodeChallenge.API.Controllers.EmployeeController.ListAll(System.Int32)">
+            <summary>
+            List specific department employees
+            </summary>
+            <param name="departmentId">departmentId</param>
+            <returns>A <see cref="T:VogCodeChallenge.BLL.Models.Employee"/> Representing the asynchronous operation.</returns>
         </member>
     </members>
 </doc>

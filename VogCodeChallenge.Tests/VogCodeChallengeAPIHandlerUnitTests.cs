@@ -19,7 +19,7 @@ namespace VogCodeChallenge.Tests
             {
 
                     new Employee {FirstName="James Wadje", LastName="Butt", JobTitle = "technician" , Address = "6649 N Blue Gum St,New Orleans, LA, 70116",  DepartmentId = 1},
-                    new Employee {FirstName="Nickolas", LastName="Juvera", JobTitle = "supervisor " , Address = "62 W Austin St,Syosset, NY, 11791",  DepartmentId = 2},
+                    new Employee {FirstName="Nickolas", LastName="Juvera", JobTitle = "supervisor" , Address = "62 W Austin St,Syosset, NY, 11791",  DepartmentId = 2},
             };
 
             var logger = new NullLogger<VogCodeChallengeAPIHandler>();
@@ -40,14 +40,11 @@ namespace VogCodeChallenge.Tests
             Assert.AreEqual(ret[0].JobTitle, "technician");
             Assert.AreEqual(ret[0].Address, "6649 N Blue Gum St,New Orleans, LA, 70116");
             Assert.AreEqual(ret[0].DepartmentId.ToString(), "1");
-            Assert.AreEqual(ret[0].FirstName, "Nickolas");
-            Assert.AreEqual(ret[0].LastName, "Juvera");
-            Assert.AreEqual(ret[0].JobTitle, "supervisor");
-            Assert.AreEqual(ret[0].Address, "62 W Austin St,Syosset, NY, 11791");
-            Assert.AreEqual(ret[0].DepartmentId.ToString(), "2");
-
-
-
+            Assert.AreEqual(ret[1].FirstName, "Nickolas");
+            Assert.AreEqual(ret[1].LastName, "Juvera");
+            Assert.AreEqual(ret[1].JobTitle, "supervisor");
+            Assert.AreEqual(ret[1].Address, "62 W Austin St,Syosset, NY, 11791");
+            Assert.AreEqual(ret[1].DepartmentId.ToString(), "2");
 
         }
     }

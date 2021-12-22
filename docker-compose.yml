@@ -1,0 +1,33 @@
+version: '3.4'
+
+services:
+  vogcodechallenge.api:
+    image: vogcodechallengeapi
+    build:
+      context: .
+      dockerfile: VogCodeChallenge.API/Dockerfile
+      args:
+       NuGetPassword: #{System.AccessToken}#
+    environment:
+      - ASPNETCORE_URLS=http://+:5000
+      - DeployVersion=0.0.0
+      - DeployEnvironment=DEV
+      - EnableDBConnectivity=false
+      - FunctionName=mockFuncrion
+      - AWSKey=mockKey
+      - AWSSecret=mockSecret
+    ports:
+      - "5000"
+
+  proxy:
+    image: vogcodechallengeapi_proxy
+    build:
+      context:  ./Nginx
+      dockerfile: Dockerfile
+    ports:
+      - "5000"
+    environment:
+      - NGINX_HOST=127.0.0.1
+    command: /bin/bash -c "envsubst '$${NGINX_HOST}' < /etc/nginx/nginx.template > /etc/nginx/nginx.conf && exec nginx -g 'daemon off;'"
+    links:
+      - vogcodechallenge.api

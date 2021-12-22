@@ -1,0 +1,19 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/VogCodeChallenge.API/bin/Debug/netcoreapp3.1
+/VogCodeChallenge.API/obj
+/VogCodeChallenge.BLL/obj
+/VogCodeChallenge.BLL/bin/Debug/netstandard2.0
+/VogCodeChallenge.Tests/bin/Debug/netcoreapp3.1
+/VogCodeChallenge.Tests/obj
+/VogCodeChallengeTask7/bin/Debug/netcoreapp3.1
+/VogCodeChallengeTask7/obj
+/.vs
+/VogCodeChallengeTask8/bin/Debug/netcoreapp3.1
+/VogCodeChallengeTask8/obj/Debug/netcoreapp3.1
+/AWSLambdaFunction/bin/Debug/netstandard2.0
+/bin/Debug
+/obj
+/AWSLambdaFunction/obj

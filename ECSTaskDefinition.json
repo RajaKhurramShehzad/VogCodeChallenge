@@ -1,0 +1,102 @@
+{
+  "executionRoleArn": "#{taskrolearn}#/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/#{servicename}#-#{environment}#",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs",
+          "awslogs-datetime-format": "%Y-%m-%d"
+        }
+      },
+      "portMappings": [
+        {
+          "hostPort": 5000,
+          "protocol": "tcp",
+          "containerPort": 5000
+        }
+      ],
+       "cpu": #{apicpu}#,
+      "environment": [
+        {
+          "name": "ASPNETCORE_URLS",
+          "value": "#{ASPNETCORE_URLS}#"
+        },
+        {
+          "name": "DeployVersion",
+          "value": "#{DeployVersion}#"
+        },
+        {
+          "name": "DeployEnvironment",
+          "value": "#{DeployEnvironment}#"
+        },
+        {
+          "name": "FunctionName",
+          "value": "#{FunctionName}#"
+        },
+        {
+          "name": "EnableDBConnectivity",
+          "value": "#{EnableDBConnectivity}#"
+        },
+        {
+          "name": "AWSKey",
+          "value": "#{AWSKey}#"
+        },
+        {
+          "name": "AWSSecret",
+          "value": "#{AWSSecret}#"
+        }
+
+      ],
+       "memoryReservation": #{apimem}#,
+      "image": "#{ecsrepos}#/#{servicename}#_webapi:#{BuildId}#",
+      "essential": true,
+      "name": "#{servicename}#_webapi"
+    },
+    {
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/#{servicename}#-#{environment}#",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "portMappings": [
+        {
+          "hostPort": 5002,
+          "protocol": "tcp",
+          "containerPort": 5002
+        }
+      ],
+      "entryPoint": [
+        "/bin/bash",
+        "-c"
+      ],
+      "command": [
+        "envsubst '$${NGINX_HOST}' < /etc/nginx/nginx.template > /etc/nginx/nginx.conf && exec nginx -g 'daemon off;'"
+      ],
+     "cpu": #{nginxcpu}#,
+      "environment": [
+        {
+          "name": "NGINX_HOST",
+          "value": "127.0.0.1"
+        }
+      ],
+     "memoryReservation": #{nginxmem}#,
+      "image": "#{ecsrepos}#/#{servicename}#_proxy:#{BuildId}#",
+      "essential": true,
+      "name": "#{servicename}#_proxy"
+    }
+  ],
+  "memory": "#{totalmem}#",
+  "taskRoleArn": "#{taskrolearn}#/#{servicename}#-#{environment}#-task-role",
+  "family": "#{servicename}#-#{environment}#",
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "networkMode": "awsvpc",
+  "cpu": "#{totalcpu}#"
+}
